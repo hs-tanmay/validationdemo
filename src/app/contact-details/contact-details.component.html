@@ -1,0 +1,21 @@
+<!-- We can add validatons in form using templates-->
+<form>
+  <div class="form-group">
+  <label for="uname"><b>Username</b></label>
+  <input placeholder="Enter Username" ngModel name="userName" #name="ngModel" id="StudName" type="text" class="form-control" minlength="5" required><br>
+    <div style="color:red;font-weight:bold;" *ngIf="!name.valid">Name is Compulsory.</div>
+    <div style="color:red;font-weight:bold;"  *ngIf="name.errors?.minlength">
+      Name must be at least 5 characters long.
+    </div> <br>
+
+    <label for="uname"><b>College Name</b></label>
+    <input placeholder="Enter College Name" ngModel name="collegname" #collegename="ngModel" id="StudName" type="text" class="form-control" minlength="5" required><br>
+      <div style="color:red;font-weight:bold;" *ngIf="!collegename.valid">College Name is Compulsory.</div> <br>
+</div>
+<label for="psw"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" ngModel name="password" #password="ngModel" minlength="7" class="form-control" required>
+<div style="color:red;font-weight:bold;"  *ngIf="password.errors?.minlength">
+  Name must be at least 7 characters long.
+</div> <br>
+<button type="submit">Login</button>
+</form>
